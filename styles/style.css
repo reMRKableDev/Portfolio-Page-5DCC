@@ -2,13 +2,15 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu&display=swap");
 
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   scroll-behavior: smooth;
 }
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 :root {
@@ -29,30 +31,52 @@ a {
 }
 
 .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 100%;
 }
 
 .row_reverse {
-  flex-direction: row-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
 .column {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
 
 .site_body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   min-height: 100vh;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .site_content {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 h1,
@@ -79,14 +103,20 @@ a {
 }
 
 .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background-color: var(--brand-black);
   position: fixed;
   width: 100%;
   text-align: center;
   height: 50px;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .navbar p {
@@ -95,10 +125,19 @@ a {
 
 .hero {
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #ffffff;
   background-image: url("../img/mally-dev.jpg");
   background-attachment: fixed;
@@ -107,11 +146,22 @@ a {
 }
 
 .fade-in {
-  animation: fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s;
+          animation: fadeIn ease 2s;
 }
 
 .fade-out {
-  animation: fadeOut ease 4s;
+  -webkit-animation: fadeOut ease 4s;
+          animation: fadeOut ease 4s;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes fadeOut {
@@ -120,6 +170,14 @@ a {
   }
   100% {
     opacity: 0;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 @keyframes fadeIn {
@@ -137,7 +195,9 @@ a {
   border: 1px solid var(--brand-black);
   width: 80%;
   background-color: var(--brand-white);
-  box-shadow: 0.2em 0.5em 0 0 var(--brand-blue),
+  -webkit-box-shadow: 0.2em 0.5em 0 0 var(--brand-blue),
+    inset 0.2em 0.5em 0 0 var(--brand-black);
+          box-shadow: 0.2em 0.5em 0 0 var(--brand-blue),
     inset 0.2em 0.5em 0 0 var(--brand-black);
 }
 
@@ -155,7 +215,26 @@ a {
 
 .hero h1::before {
   content: "FullStack Web Developer";
-  animation: animate 5s alternate 0.8s linear infinite;
+  -webkit-animation: animate 5s alternate 0.8s linear infinite;
+          animation: animate 5s alternate 0.8s linear infinite;
+}
+
+@-webkit-keyframes animate {
+  20% {
+    content: "Hip Hop Nerd";
+  }
+  40% {
+    content: "Coffee Lover";
+  }
+  60% {
+    content: "Dancer";
+  }
+  80% {
+    content: "Music Enthusiast";
+  }
+  100% {
+    content: "World Citizen";
+  }
 }
 
 @keyframes animate {
@@ -178,14 +257,21 @@ a {
 
 .challenges {
   background-color: var(--brand-white);
-  box-shadow: 0 0 5px #888888;
+  -webkit-box-shadow: 0 0 5px #888888;
+          box-shadow: 0 0 5px #888888;
   padding: 50px;
 }
 
 .challenges header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 30px;
 }
 
@@ -194,7 +280,9 @@ a {
   font-size: 4.5vw;
   border: 2px solid var(--brand-black);
   padding: 10px;
-  box-shadow: 0.2em 0.2em 0 0 var(--brand-blue),
+  -webkit-box-shadow: 0.2em 0.2em 0 0 var(--brand-blue),
+    inset 0.2em 0.2em 0 0 var(--brand-black);
+          box-shadow: 0.2em 0.2em 0 0 var(--brand-blue),
     inset 0.2em 0.2em 0 0 var(--brand-black);
 }
 
@@ -219,7 +307,8 @@ a {
   width: 100%;
   height: auto;
   margin: 0;
-  box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px #888;
+          box-shadow: 0 0 5px #888;
 }
 
 .portfolio header {
@@ -231,7 +320,8 @@ a {
   text-transform: uppercase;
   text-decoration: underline;
   color: var(--brand-blue);
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   border: none;
 }
 
@@ -258,7 +348,9 @@ footer p {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .column {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
   }
 }
 
